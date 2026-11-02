@@ -1,35 +1,47 @@
 # Sirah Nabawiyah — Jejak Risalah
 
-Web app statis berbahasa Indonesia untuk membaca perjalanan hidup Rasulullah ﷺ secara kronologis.
+Website statis edukatif untuk mempelajari perjalanan hidup Rasulullah ﷺ melalui kronologi peristiwa, narasi ringkas, konteks, dan rujukan awal.
 
-## Isi proyek
-- `index.html` — struktur halaman
-- `assets/css/style.css` — desain responsif
-- `assets/js/data.js` — data timeline dan rujukan awal
-- `assets/js/app.js` — filter periode dan modal detail
+## Fitur
+- Desain responsif dengan tema glassmorphism gelap, emerald, dan aksen emas.
+- Timeline kronologis yang dapat difilter berdasarkan periode Makkah dan Madinah.
+- Pencarian peristiwa berdasarkan judul, tahun, label, dan ringkasan.
+- Panel detail berisi ringkasan, konteks, rujukan, dan catatan kehati-hatian.
+- Tanpa database, framework, atau proses build; dapat di-host langsung di Cloudflare Pages.
 
-## Menjalankan lokal
-Buka `index.html` di browser. Koneksi internet diperlukan untuk memuat Google Fonts; aplikasi tetap berfungsi jika font eksternal gagal dimuat.
+## Struktur
+```text
+sirah-nabawiyah/
+├── index.html
+├── README.md
+└── assets/
+    ├── css/style.css
+    └── js/
+        ├── data.js
+        └── app.js
+```
+
+## Menjalankan secara lokal
+Buka `index.html` di browser. Untuk pengalaman paling konsisten, jalankan melalui ekstensi Live Server atau server lokal sederhana.
 
 ## Deploy ke Cloudflare Pages melalui GitHub
-1. Buat repository baru di GitHub, misalnya `sirah-nabawiyah`.
-2. Unggah seluruh isi folder proyek ini ke root repository (pastikan `index.html` berada di root).
-3. Di Cloudflare Dashboard buka **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**.
-4. Pilih repository GitHub yang baru dibuat.
-5. Pengaturan:
-   - Production branch: `main`
-   - Framework preset: `None`
-   - Build command: `exit 0` (atau kosong jika dashboard mengizinkan)
-   - Build output directory: `/` atau `.` sesuai pilihan dashboard untuk proyek statis.
-6. Klik **Save and Deploy**.
+1. Buat repository GitHub, misalnya `sirah-nabawiyah`.
+2. Unggah **isi folder proyek** ke root repository. Pastikan `index.html` berada di root, bukan di dalam folder bertingkat.
+3. Di Cloudflare Dashboard pilih **Workers & Pages → Create application → Pages → Connect to Git**.
+4. Pilih repository tersebut dan branch produksi `main`.
+5. Framework preset: `None`.
+6. Build command: kosongkan jika diizinkan (atau gunakan `exit 0`).
+7. Build output directory: `.`
+8. Klik **Save and Deploy**.
 
-Setelah integrasi GitHub aktif, perubahan yang di-push ke branch produksi akan memicu deployment otomatis.
+## Catatan editorial dan sumber
+Kronologi ini adalah peta belajar, bukan edisi kritis akademik. Tahun Masehi sering merupakan perkiraan yang dikonversi dari kronologi Hijriah atau tradisi sirah. Tanggal harian, urutan beberapa kejadian, jumlah peserta, dan detail narasi dapat berbeda antar-sumber.
 
-## Catatan editorial dan validitas
-Konten `data.js` adalah kerangka awal, bukan edisi akademik final. Tahun sejumlah peristiwa merupakan perkiraan. Rujukan disebut sebagai titik awal penelusuran, bukan klaim bahwa setiap detail narasi telah dinilai sahih. Sebelum dipublikasikan sebagai bahan ajar, lakukan verifikasi riwayat secara individual dengan edisi kitab, bab, nomor hadis, ayat, dan/atau halaman yang dapat diperiksa. Bedakan:
-- teks Al-Qur'an,
-- hadis beserta kitab dan nomor/kitab-bab,
-- riwayat sirah/historiografi,
-- pendapat atau rekonstruksi sejarawan.
+Rujukan awal yang disebut pada tiap peristiwa meliputi:
+- Al-Qur'an, dengan nomor surah dan ayat untuk peristiwa yang disebut di dalamnya.
+- Sahih al-Bukhari dan Sahih Muslim, dengan nama kitab/bab atau tema riwayat jika relevan.
+- Ibn Ishaq melalui redaksi Ibn Hisham, *al-Sirah al-Nabawiyyah*.
+- Ibn Sa'd, *al-Tabaqat al-Kabir*.
+- Riwayat dalam Musnad Ahmad untuk beberapa tema yang tidak menjadi bagian dari Sahihain.
 
-Jangan menambahkan kutipan hadis atau ayat tanpa teks dan rujukan yang telah diperiksa.
+**Penting:** disebutnya sebuah kitab sebagai rujukan tidak berarti seluruh detail peristiwa otomatis sahih. Setiap riwayat perlu ditelusuri dan dinilai secara individual. Sebelum dipakai sebagai bahan ajar atau publikasi ilmiah, lakukan verifikasi lanjutan pada edisi kitab, nomor hadis, sanad, dan kajian sejarah yang relevan.

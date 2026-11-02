@@ -62,7 +62,7 @@
       <div class="stat-row">
         <div><b>23</b><span>TAHUN MASA KERASULAN</span></div>
         <div><b>2</b><span>PERIODE UTAMA</span></div>
-        <div><b>1</b><span>RISALAH TAUHID</span></div>
+        <div><b id="eventTotal">30+</b><span>PERISTIWA TERPILIH</span></div>
       </div>
     </section>
 
@@ -73,6 +73,7 @@
           <div><h2>Perjalanan <em>Sirah</em></h2><p>Telusuri peristiwa penting dalam urutan waktunya.</p></div>
           <span class="heading-seal">۞</span>
         </div>
+        <div class="timeline-tools"><label class="search-box"><span>⌕</span><input id="eventSearch" type="search" placeholder="Cari peristiwa, tahun, atau kata kunci…" aria-label="Cari peristiwa"></label><span class="event-count" id="eventCount">Memuat peristiwa…</span></div>
         <div class="period-tabs" role="tablist" aria-label="Filter periode">
           <button class="period-tab selected" data-period="all">Semua periode</button>
           <button class="period-tab" data-period="makkah">Periode Makkah</button>
@@ -127,7 +128,7 @@
   <footer>
     <div class="footer-brand"><span class="brand-mark">۞</span><b>SIRAH NABAWIYAH</b></div>
     <p>Belajar sejarah, menumbuhkan keteladanan.</p>
-    <small>© <span id="year"></span> Sirah Nabawiyah. Materi awal untuk pengembangan dan verifikasi.</small>
+    <small>© <span id="year"></span> Sirah Nabawiyah. Disusun sebagai pengantar belajar; telaah sumber tetap diperlukan.</small>
   </footer>
 
   <div class="modal-backdrop" id="eventModal" aria-hidden="true">
